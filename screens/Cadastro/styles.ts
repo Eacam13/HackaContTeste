@@ -1,82 +1,38 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { STATUS_BAR_HEIGHT } from "../../src/helpers/getStatusBarHeight";
+import { themes } from "../../src/styles/colors";
 
-const { width } = Dimensions.get("window");
-
-export const estilos = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    paddingTop: STATUS_BAR_HEIGHT(),
   },
-  roundedHeader: {
-    backgroundColor: "#1E90FF",
-    width: width,
-    height: 150,
-    borderBottomLeftRadius: 60,
-    alignItems: "center",
-    justifyContent: "center",
+  header: {
+    flex: 1,
+    minHeight: 56,
   },
-  headerContent: {
-    position: "absolute",
-    top: 40,
-    left: 20,
-    right: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  backButton: {
-    fontSize: 18,
-    color: "#fff",
-  },
-  iconButton: {
-    width: 30,
-    height: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 15,
-    backgroundColor: "#e5e5e5",
-  },
-  icon: {
-    fontSize: 16,
-    color: "#000",
-  },
-  title: {
+  mainTitle: {
     fontSize: 32,
     fontWeight: "bold",
-    color: "#fff",
-    marginTop: 40,
+    marginTop: 27,
+    textAlign: "center",
+    marginHorizontal: 12,
+    color: themes.colors.gray[100],
   },
-  title2: {
-    fontSize: 24,
+  title: {
+    fontSize: 16,
     fontWeight: "bold",
-    color: "#fff",
-    marginTop: 40,
-    marginBottom: 16,
+    marginBottom: 32,
+    textAlign: "center",
+    color: themes.colors.gray[200],
   },
-  form: {
-    flex: 1,
-    backgroundColor: "#001a35",
-    padding: 20,
-    borderRadius: 20,
-    justifyContent: "flex-end",
-    overflow: "hidden",
-  },
-  input: {
-    backgroundColor: "#1C2C44",
-    color: "#fff",
-    padding: 15,
-    marginBottom: 35,
-    borderRadius: 10,
-  },
-  signUpButton: {
-    backgroundColor: "#1E90FF",
-    padding: 15,
-    borderRadius: 10,
-    alignItems: "center",
-    marginTop: 10,
-    marginBottom: 70,
-  },
-  signUpButtonText: {
-    color: "#fff",
+  subTitle: {
+    fontSize: 16,
     fontWeight: "bold",
+    marginBottom: 8,
+    color: themes.colors.gray[100],
+  },
+  keyboardScrollView: {
+    paddingHorizontal: 16,
   },
 });
